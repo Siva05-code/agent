@@ -273,10 +273,10 @@ async def api_status():
         ]
     }
 
+@app.get("/api/health")
+def read_root():
+    return {"status": "running on Hugging Face!"}
+
 if __name__ == "__main__":
     print("🚀 Starting Manufacturing Equipment Maintenance Query Agent")
-    print("🤖 OpenRouter AI Integration Enabled")
-    print("📝 Set OPENROUTER_API_KEY environment variable for AI responses")
-    print("🌐 Server: http://127.0.0.1:8000")
-    print("📚 API Docs: http://127.0.0.1:8000/docs")
     uvicorn.run(app, host="127.0.0.1", port=8000)
