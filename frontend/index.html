@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Equipment Maintenance Query Agent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-cogs text-3xl"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Manufacturing Maintenance Agent</h1>
+                        <p class="text-blue-100">AI-Powered Equipment Documentation Query System</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="uploadBtn" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                        <i class="fas fa-upload mr-2"></i>Upload Documents
+                    </button>
+                    <button id="documentsBtn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-folder mr-2"></i>Documents
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 pb-20">
+        <!-- Upload Section -->
+        <div id="uploadSection" class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">
+                    <i class="fas fa-file-upload mr-2 text-blue-600"></i>Upload Equipment Manuals & Documents
+                </h2>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
+                    <input type="file" id="fileInput" multiple accept=".pdf,.txt" class="hidden">
+                    <div id="dropZone" class="cursor-pointer">
+                        <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                        <p class="text-gray-600 mb-2">Drag and drop multiple files here, or click to browse</p>
+                        <p class="text-sm text-gray-500">Supports multiple PDF and TXT files</p>
+                        <p class="text-xs text-blue-600 mt-2">💡 You can select multiple files at once!</p>
+                    </div>
+                </div>
+                <div id="uploadProgress" class="mt-4 hidden">
+                    <div class="bg-gray-200 rounded-full h-2">
+                        <div id="progressBar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    <p id="uploadStatus" class="text-sm text-gray-600 mt-2"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Query Section -->
+        <div id="querySection" class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">
+                    <i class="fas fa-search mr-2 text-green-600"></i>Ask Questions About Your Equipment
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex space-x-2">
+                        <input 
+                            type="text" 
+                            id="questionInput" 
+                            placeholder="e.g., How do I troubleshoot the conveyor belt motor?" 
+                            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        >
+                        <button id="askBtn" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Ask
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="suggestion-btn bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors">
+                            Maintenance schedule
+                        </button>
+                        <button class="suggestion-btn bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors">
+                            Troubleshooting steps
+                        </button>
+                        <button class="suggestion-btn bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors">
+                            Safety procedures
+                        </button>
+                        <button class="suggestion-btn bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm hover:bg-gray-200 transition-colors">
+                            Parts replacement
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover fade-in">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">
+                    <i class="fas fa-lightbulb mr-2 text-yellow-600"></i>Answer
+                </h2>
+                <div id="answerContent" class="mb-6">
+                    <!-- Answer will be populated here -->
+                </div>
+                
+                <h3 class="text-lg font-semibold mb-3 text-gray-700">
+                    <i class="fas fa-file-alt mr-2 text-blue-600"></i>Relevant Sections
+                </h3>
+                <div id="relevantSections" class="space-y-3">
+                    <!-- Relevant sections will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents Section -->
+        <div id="documentsSection" class="hidden">
+            <div class="bg-white rounded-lg shadow-lg p-6 card-hover">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        <i class="fas fa-folder mr-2 text-blue-600"></i>Uploaded Documents
+                    </h2>
+                    <button id="refreshDocsBtn" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div id="documentsList" class="space-y-3">
+                    <!-- Documents will be populated here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 flex items-center space-x-3">
+            <div class="loading-spinner"></div>
+            <span id="loadingText">Processing...</span>
+        </div>
+    </div>
+
+    <!-- Minimal Chat Box - Bottom Fixed -->
+    <div id="chatBox" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+        <div class="max-w-4xl mx-auto p-4">
+            <div class="flex space-x-3">
+                <input 
+                    type="text" 
+                    id="chatInput" 
+                    placeholder="Ask about maintenance procedures, troubleshooting, safety..." 
+                    class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                <button id="chatSend" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2">
+        <!-- Toast notifications will be added here -->
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>

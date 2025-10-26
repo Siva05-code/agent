@@ -1,0 +1,135 @@
+CONVEYOR BELT SYSTEM MAINTENANCE MANUAL
+Model: CB-2000 Industrial Conveyor
+Serial Number: CB2000-2024-001
+
+SAFETY PROCEDURES
+Before performing any maintenance on the conveyor belt system:
+1. Turn off the main power switch and lock it out
+2. Wear appropriate PPE including safety glasses and work gloves
+3. Ensure the conveyor is completely stopped before accessing moving parts
+4. Never attempt maintenance while the system is running
+
+ROUTINE MAINTENANCE SCHEDULE
+
+Daily Maintenance:
+- Check belt tension and alignment
+- Inspect for visible damage or wear
+- Clean debris from belt surface and rollers
+- Listen for unusual noises during operation
+
+Weekly Maintenance:
+- Lubricate all roller bearings
+- Check motor temperature and vibration
+- Inspect drive chain tension
+- Clean motor cooling vents
+
+Monthly Maintenance:
+- Replace air filters in motor housing
+- Check electrical connections for tightness
+- Inspect belt edges for fraying
+- Test emergency stop functionality
+
+Quarterly Maintenance:
+- Replace drive chain if worn
+- Inspect and replace worn rollers
+- Check belt tracking adjustments
+- Calibrate speed sensors
+
+TROUBLESHOOTING GUIDE
+
+Problem: Belt slipping or not moving
+Possible Causes:
+- Loose drive chain
+- Worn drive sprockets
+- Insufficient belt tension
+- Motor overload
+
+Solutions:
+1. Check and adjust drive chain tension
+2. Inspect sprockets for wear and replace if necessary
+3. Adjust belt tension using tensioning bolts
+4. Check motor load and reduce if overloaded
+
+Problem: Belt tracking to one side
+Possible Causes:
+- Misaligned rollers
+- Uneven belt tension
+- Worn or damaged rollers
+- Debris buildup on rollers
+
+Solutions:
+1. Realign rollers using alignment tools
+2. Adjust belt tension evenly across width
+3. Replace worn or damaged rollers
+4. Clean all rollers thoroughly
+
+Problem: Excessive noise during operation
+Possible Causes:
+- Worn bearings in rollers
+- Loose drive components
+- Belt rubbing against frame
+- Motor bearing failure
+
+Solutions:
+1. Replace worn roller bearings
+2. Tighten all drive components
+3. Check belt clearance from frame
+4. Inspect motor bearings and replace if needed
+
+Problem: Motor overheating
+Possible Causes:
+- Blocked cooling vents
+- Overloaded motor
+- Faulty motor bearings
+- Electrical connection issues
+
+Solutions:
+1. Clean motor cooling vents
+2. Reduce load or check for obstructions
+3. Replace motor bearings
+4. Check and tighten electrical connections
+
+PARTS REPLACEMENT PROCEDURES
+
+Belt Replacement:
+1. Disconnect power and lock out
+2. Remove belt guards and safety covers
+3. Loosen tensioning bolts to release belt tension
+4. Remove old belt from drive and idler pulleys
+5. Install new belt ensuring proper alignment
+6. Adjust tension to manufacturer specifications
+7. Reinstall guards and test operation
+
+Roller Replacement:
+1. Disconnect power and lock out
+2. Remove belt from affected roller section
+3. Unbolt roller from mounting brackets
+4. Install new roller with proper alignment
+5. Reinstall belt and adjust tension
+6. Test operation and check tracking
+
+Drive Chain Replacement:
+1. Disconnect power and lock out
+2. Remove chain guard and safety covers
+3. Loosen motor mounting bolts
+4. Remove old chain from sprockets
+5. Install new chain with proper tension
+6. Align motor and tighten mounting bolts
+7. Reinstall guards and test operation
+
+SPECIFICATIONS
+- Belt Width: 24 inches
+- Belt Speed: 0-100 feet per minute (variable)
+- Motor Power: 5 HP, 3-phase, 460V
+- Drive Chain: ANSI 60, 1-inch pitch
+- Roller Diameter: 2 inches
+- Maximum Load: 500 pounds per linear foot
+
+CONTACT INFORMATION
+For technical support or parts ordering:
+Phone: 1-800-CONVEYOR
+Email: support@conveyorsystems.com
+Website: www.conveyorsystems.com
+
+WARRANTY
+This equipment is covered by a 2-year warranty for parts and labor. Warranty does not cover damage due to improper maintenance, misuse, or normal wear and tear.

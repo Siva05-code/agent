@@ -1,0 +1,68 @@
+INDUSTRIAL MOTOR MODEL IM-5000
+OPERATION AND MAINTENANCE MANUAL
+
+=== SAFETY PRECAUTIONS ===
+- Always disconnect power before performing maintenance
+- Wear appropriate personal protective equipment (PPE)
+- Ensure proper grounding before operation
+- Keep hands and tools away from moving parts
+- Do not operate in explosive atmospheres
+
+=== SPECIFICATIONS ===
+Model: IM-5000
+Power Rating: 50 HP
+Voltage: 480V, 3-phase
+RPM: 1750
+Frequency: 60 Hz
+Insulation Class: F
+Protection: IP55
+
+=== TROUBLESHOOTING ===
+
+MOTOR WILL NOT START:
+- Check circuit breakers and fuses
+- Reset overload relay if tripped
+- Inspect all electrical connections
+- Test motor winding resistance
+
+MOTOR OVERHEATING:
+- Reduce load or check for mechanical binding
+- Clean cooling vents and fan
+- Check all three phases for proper voltage
+- Replace worn bearings if necessary
+
+EXCESSIVE VIBRATION:
+- Realign motor and driven equipment
+- Balance coupling or driven equipment
+- Replace worn bearings
+- Tighten all mounting hardware
+
+=== MAINTENANCE SCHEDULE ===
+
+DAILY:
+- Visual inspection for unusual noise or vibration
+- Check operating temperature
+
+MONTHLY:
+- Lubricate bearings with high-temperature grease
+- Inspect electrical connections
+- Measure operating current
+
+QUARTERLY:
+- Perform vibration analysis
+- Test insulation resistance
+- Check shaft alignment
+
+ANNUALLY:
+- Replace bearings
+- Clean motor internals
+- Inspect windings for damage
+
+=== BEARING REPLACEMENT ===
+1. Disconnect power and lock out
+2. Remove coupling from shaft
+3. Remove end bell bolts
+4. Use bearing puller to remove old bearing
+5. Heat new bearing to 250°F
+6. Press bearing onto shaft
+7. Reassemble and test
